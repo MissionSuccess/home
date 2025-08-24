@@ -259,6 +259,231 @@
             border: 3px solid var(--accent);
         }
 
+         .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #777;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 1rem auto 0;
+        }
+
+        /* HORIZONTAL FACULTY LAYOUT */
+        .faculty-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+        }
+
+        .faculty-horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding: 30px 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) #f1f1f1;
+            -ms-overflow-style: none;
+        }
+
+        .faculty-horizontal-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .faculty-horizontal-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .faculty-horizontal-scroll::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        .faculty-card {
+            flex: 0 0 320px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .faculty-img-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .faculty-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .faculty-card:hover .faculty-img {
+            transform: scale(1.05);
+        }
+
+        .faculty-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            color: white;
+        }
+
+        .faculty-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .faculty-role {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .faculty-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faculty-expertise {
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .faculty-exp {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .exp-badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .faculty-social {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .scroll-indicator i {
+            color: var(--accent);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(0);
+            }
+            40% {
+                transform: translateX(10px);
+            }
+            60% {
+                transform: translateX(5px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .faculty-card {
+                flex: 0 0 280px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .faculty-name {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .faculty-card {
+                flex: 0 0 260px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+
         .contact {
             padding: 5rem 2rem;
             background-color: white;
@@ -339,13 +564,13 @@
             gap: 1.5rem;
         }
 
-        .social-icon {
+        .social-icons {
             font-size: 1.5rem;
             color: white;
             transition: color 0.3s;
         }
 
-        .social-icon:hover {
+        .social-icons:hover {
             color: var(--accent);
         }
 
@@ -430,6 +655,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#features">Programs</a></li>
                     <li><a href="#success">Success Stories</a></li>
+                    <li><a href="#faculty">Our faculty</a></li>
                     <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
@@ -450,16 +676,44 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-title">
-                <h2>Our Programs</h2>
+                <h2>Our Program Cources</h2>
                 <p>We offer specialized training programs designed to make you job-ready</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Basic computer knowledge</h3>
+                    <p>understanding hardware components (like the CPU, memory, input/output devices)</p> 
+                    <p>software (operating systems, applications)</p>
+                    <p>fundamental computer operations (input, processing, storage, output)</p>
+                    <p>essential user skills such as using the internet, sending emails, managing files.</p>
+                    <p>using productivity software like word processors and spreadsheets.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
                         <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Full Stack Development</h3>
-                    <p>Master front-end and back-end technologies to become a versatile developer</p>
+                    <h3>Full Stack Java</h3>
+                    <p>Master Java back-end and front-end technologies to become a versatile developer</p>
+                    <p>Master the Basics</p>
+                    <p>Learn Front-End Development</p>
+                    <p>Dive into Back-End Development</p>
+                    <p>Database Management</p>
+                    <p>Web Services and APIs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Full Stack Python</h3>
+                    <p>Python projects and further develop to expertise in a leading company</p>
+                    <p>Front-End Technologies</p>
+                    <p>Back-End Technologies</p>
+                    <p>Database</p>
+                    <p>Development Tools</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -474,6 +728,18 @@
                     </div>
                     <h3>Cybersecurity</h3>
                     <p>Become an expert in protecting digital assets and infrastructure</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>NON IT</h3>
+                    <!-- <p>Success is the sum of small efforts, repeated day-in and day-out</p> -->
+                    <p>Basic Accounting Knowledge</p>
+                    <p>Accounts Receivables</p>
+                    <p>Accounts Payable</p>
+                    <p>General Ledger</p>
+                    <p>Auditing</p>
                 </div>
             </div>
         </div>
@@ -509,6 +775,143 @@
         </div>
     </section>
 
+    <!-- Faculty Trainers Section with Horizontal Layout -->
+    <section class="faculty-section" id="faculty">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Expert Faculty Trainers</h2>
+                <p>Learn from industry experts with years of experience</p>
+            </div>
+            
+            <div class="faculty-horizontal-scroll">
+                <!-- Faculty 1 -->
+                <div class="faculty-card">
+                    <div class="faculty-img-container">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQEqlS0kxuwEng/profile-displayphoto-crop_800_800/B56Zfi90UuH8AQ-/0/1751859546118?e=1758758400&v=beta&t=GEPVuGkhCqMoodV-hOp267BLK6dH7T2Q5xwM8lhro7E" alt="Faculty" class="faculty-img">
+                        <div class="faculty-overlay">
+                            <h3 class="faculty-name">Kalapati Hanumanth Kumar</h3>
+                            <p class="faculty-role">Senior Finance Trainer</p>
+                        </div>
+                    </div>
+                    <div class="faculty-content">
+                        <p class="faculty-expertise">Specializes in Financial Analysis, with extensive MNC industrial experience.</p>
+                        <div class="faculty-exp">
+                            <span class="exp-badge">12+ Years Exp</span>
+                            <span class="exp-badge">B Com, MBA Finance</span>
+                        </div>
+                        <div class="faculty-social">
+                            <a href="https://www.linkedin.com/in/kalapati-hanumanth-kumar-7b0824173/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <!-- <a href="hanumanth161188@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Faculty 2 -->
+                <div class="faculty-card">
+                    <div class="faculty-img-container">
+                    <!--https://randomuser.me/api/portraits/men/44.jpg -->
+                    <!-- https://media.licdn.com/dms/image/v2/D5603AQHSs5OXfkUfyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718262184423?e=1758758400&v=beta&t=u2IxaPYUvxM4Yt8lDoXx7nTZANSWSxftb4aDR1CUl9M-->    
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQHSs5OXfkUfyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718262184423?e=1758758400&v=beta&t=u2IxaPYUvxM4Yt8lDoXx7nTZANSWSxftb4aDR1CUl9M" alt="Faculty" class="faculty-img">
+                        <div class="faculty-overlay">
+                            <h3 class="faculty-name">Charan</h3>
+                            <p class="faculty-role">Software Engineer</p>
+                        </div>
+                    </div>
+                    <div class="faculty-content">
+                        <p class="faculty-expertise">Expert in Java J2EE | SQL/PLSQL | Oracle E-Business Suite Applications</p>
+                        <div class="faculty-exp">
+                            <span class="exp-badge">2+ Years Exp</span>
+                            <span class="exp-badge">B.tech, CSE</span>
+                        </div>
+                        <div class="faculty-social">
+                            <a href="https://www.linkedin.com/in/pamula-charan-5896b81a1/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <!-- <a href="pamulacharan7@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Faculty 3 
+                <div class="faculty-card">
+                    <div class="faculty-img-container">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Faculty" class="faculty-img">
+                        <div class="faculty-overlay">
+                            <h3 class="faculty-name">Arun Patel</h3>
+                            <p class="faculty-role">Banking & Finance Expert</p>
+                        </div>
+                    </div>
+                    <div class="faculty-content">
+                        <p class="faculty-expertise">Specializes in Retail Banking, Wealth Management, and FinTech innovations with real-world experience.</p>
+                        <div class="faculty-exp">
+                            <span class="exp-badge">15+ Years Exp</span>
+                            <span class="exp-badge">MBA, CFP</span>
+                        </div>
+                        <div class="faculty-social">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                -->
+
+                <!-- Faculty 4 
+                <div class="faculty-card">
+                    <div class="faculty-img-container">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Faculty" class="faculty-img">
+                        <div class="faculty-overlay">
+                            <h3 class="faculty-name">Sneha Desai</h3>
+                            <p class="faculty-role">Business Communication Trainer</p>
+                        </div>
+                    </div>
+                    <div class="faculty-content">
+                        <p class="faculty-expertise">Expert in Corporate Communication, Soft Skills development, and Interview Preparation techniques.</p>
+                        <div class="faculty-exp">
+                            <span class="exp-badge">8+ Years Exp</span>
+                            <span class="exp-badge">MA, PhD</span>
+                        </div>
+                        <div class="faculty-social">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                -->
+                
+                <!-- Faculty 5 
+                <div class="faculty-card">
+                    <div class="faculty-img-container">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Faculty" class="faculty-img">
+                        <div class="faculty-overlay">
+                            <h3 class="faculty-name">Vikram Singh</h3>
+                            <p class="faculty-role">Investment Strategist</p>
+                        </div>
+                    </div>
+                    <div class="faculty-content">
+                        <p class="faculty-expertise">Expert in portfolio management, equity research, and investment strategies with a proven track record.</p>
+                        <div class="faculty-exp">
+                            <span class="exp-badge">14+ Years Exp</span>
+                            <span class="exp-badge">CFA, MBA</span>
+                        </div>
+                        <div class="faculty-social">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                -->
+
+
+            </div>
+            
+            <!-- 
+            <div class="scroll-indicator">
+                <i class="fas fa-arrow-right"></i>
+                <span>Scroll horizontally to view more faculty members</span>
+            </div>
+            -->
+
+
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -552,7 +955,7 @@
                         </div>
                         <div>
                             <h3>Location</h3>
-                            <p>Venkatagiri</p>
+                            <p>India</p>
                         </div>
                     </div>
 
@@ -584,6 +987,10 @@
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
+                        <label for="name">Qualification</label>
+                        <input type="text" id="name" name="name" placeholder="Your Qualification" required>
+                    </div>
+                    <div class="form-group">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
@@ -595,9 +1002,8 @@
                         <label for="course">Course Interested In</label>
                         <select id="course" name="course" required>
                             <option value="">Select a course</option>
-                            <option value="Full Stack Development">Full Stack Development</option>
-                            <option value="Data Science & Analytics">Data Science & Analytics</option>
-                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="IT JOB">IT JOB</option>
+                            <option value="NON IT">NON IT JOB</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -672,6 +1078,40 @@
                 document.getElementById('thankYouMessage').style.display = 'block';
             }, 1000);
         });
+
+            // Animation for faculty cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const facultyCards = document.querySelectorAll('.faculty-card');
+            
+            // Set initial state
+            facultyCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(40px)';
+            });
+            
+            // Animate with delay
+            facultyCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+            
+            // Hide scroll indicator after scrolling
+            const scrollContainer = document.querySelector('.faculty-horizontal-scroll');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            
+            scrollContainer.addEventListener('scroll', function() {
+                if (scrollContainer.scrollLeft > 50) {
+                    scrollIndicator.style.opacity = '0';
+                    scrollIndicator.style.transition = 'opacity 0.5s ease';
+                } else {
+                    scrollIndicator.style.opacity = '1';
+                }
+            });
+        });
+    
     </script>
 </body>
 </html>
