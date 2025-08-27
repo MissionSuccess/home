@@ -1,17 +1,9 @@
-# Mission Success Website with Requested Updates
-
-I've created a complete website with the requested changes:
-- Added the background image to Programs and Success Stories sections
-- Made the Faculty section horizontal with centered heading
-- Arranged contact section with info on left and form on right
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mission Success - 100% Job Guarantee</title>
+  <title>Mission Success - Wave Designs</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -36,7 +28,6 @@ I've created a complete website with the requested changes:
       line-height: 1.6;
     }
 
-    /* Header & Navigation */
     header {
       position: fixed;
       top: 0;
@@ -99,7 +90,6 @@ I've created a complete website with the requested changes:
       width: 100%;
     }
 
-    /* Hero Section with 3 Waves */
     .hero {
       position: relative;
       text-align: center;
@@ -109,6 +99,17 @@ I've created a complete website with the requested changes:
       z-index: 1;
       overflow: hidden;
     }
+
+    .hero h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: rgb(209, 6, 91);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero h2 span {
+            color: var(--secondary);
+        }
     
     .hero h1 {
       font-size: 3.5rem;
@@ -145,8 +146,8 @@ I've created a complete website with the requested changes:
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
 
-    /* Wave Section */
-    .wave-container {
+    /* Wave Style 1 - Smooth Continuous Waves */
+    .wave-style-1 {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -155,432 +156,189 @@ I've created a complete website with the requested changes:
       overflow: hidden;
     }
 
-    .wave {
+    .wave-1 {
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 100%;
+      width: 200%;
       height: 100%;
-    }
-
-    .wave1 {
-      z-index: 3;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" fill="%231e5799"><path d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z" opacity=".25" /></svg>');
+      background-size: 1200px 100%;
+      animation: wave-animation-1 15s linear infinite;
       opacity: 0.8;
-      animation: wave-animation-1 12s linear infinite;
     }
 
-    .wave2 {
-      z-index: 2;
-      opacity: 0.6;
-      animation: wave-animation-2 10s linear infinite;
-    }
-
-    .wave3 {
-      z-index: 1;
-      opacity: 0.4;
-      animation: wave-animation-3 8s linear infinite;
-    }
-
-    .wave svg {
+    .wave-2 {
       position: absolute;
       bottom: 0;
       left: 0;
-      width: 100%;
+      width: 200%;
       height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" fill="%232ce0bf"><path d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z" opacity=".5" /></svg>');
+      background-size: 1200px 100%;
+      animation: wave-animation-1 12s linear infinite;
+      opacity: 0.6;
+    }
+
+    .wave-3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" fill="%23ffffff"><path d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z" /></svg>');
+      background-size: 1200px 100%;
+      animation: wave-animation-1 10s linear infinite;
+      opacity: 0.4;
     }
 
     @keyframes wave-animation-1 {
       0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
+      100% { transform: translateX(-50%); }
     }
 
-    @keyframes wave-animation-2 {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(0); }
-    }
-
-    @keyframes wave-animation-3 {
-      0% { transform: translateX(0) scaleY(1.2); }
-      50% { transform: translateX(-50%) scaleY(1); }
-      100% { transform: translateX(-100%) scaleY(1.2); }
-    }
-
-    /* Sections Common Styles */
-    .section {
-      padding: 80px 20px;
-      text-align: center;
-      position: relative;
-    }
-
-    .section-bg {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                  url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80') center/cover no-repeat;
-      color: white;
-    }
-
-    .section-light {
-      background: var(--light);
-    }
-
-    .section-white {
-      background: white;
-    }
-
-    .section-title {
-      margin-bottom: 3rem;
-    }
-
-    .section-title h2 {
-      font-size: 2.5rem;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .section-title p {
-      color: #666;
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .section-bg .section-title h2,
-    .section-bg .section-title p {
-      color: white;
-    }
-
-    /* Programs Section */
-    .programs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .program-card {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .program-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .program-icon {
-      font-size: 3rem;
-      color: var(--primary);
-      margin-bottom: 1.5rem;
-    }
-
-    .program-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--dark);
-    }
-
-    .program-card p {
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Success Stories */
-    .stories-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .story-card {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 10px;
-      padding: 2rem;
-      width: 300px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .story-card:hover {
-      transform: scale(1.05);
-    }
-
-    .story-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 1rem;
-      border: 3px solid var(--secondary);
-    }
-
-    /* Faculty Section */
-    .faculty-section {
-      padding: 4rem 0;
-      background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
-    }
-
-    .faculty-horizontal-scroll {
-      display: flex;
-      overflow-x: auto;
-      gap: 25px;
-      padding: 30px 20px;
-      scrollbar-width: thin;
-      scrollbar-color: var(--accent) #f1f1f1;
-    }
-
-    .faculty-horizontal-scroll::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .faculty-horizontal-scroll::-webkit-scrollbar-track {
-      background: #f1f1f1;
-      border-radius: 10px;
-    }
-
-    .faculty-horizontal-scroll::-webkit-scrollbar-thumb {
-      background: var(--accent);
-      border-radius: 10px;
-    }
-
-    .faculty-card {
-      flex: 0 0 320px;
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .faculty-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    }
-
-    .faculty-img-container {
-      position: relative;
+    /* Wave Style 2 - Flowing Curves */
+    .wave-style-2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       height: 200px;
       overflow: hidden;
     }
 
-    .faculty-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .faculty-card:hover .faculty-img {
-      transform: scale(1.05);
-    }
-
-    .faculty-overlay {
+    .curve-1 {
       position: absolute;
       bottom: 0;
       left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-      padding: 20px;
-      color: white;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" fill="%231e5799"><path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" opacity=".25" /></svg>');
+      background-size: 1200px 100%;
+      animation: wave-animation-2 18s linear infinite;
+      opacity: 0.8;
     }
 
-    .faculty-name {
-      font-size: 1.4rem;
-      margin-bottom: 0.3rem;
+    .curve-2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" fill="%232ce0bf"><path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" opacity=".5" /></svg>');
+      background-size: 1200px 100%;
+      animation: wave-animation-2 15s linear infinite;
+      opacity: 0.6;
     }
 
-    .faculty-role {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 1rem;
+    .curve-3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" fill="%23ffffff"><path d="M321.39 56.44c58-10.79 114.16-30.13 172-41.86 82.39-16.72 168.19-17.73 250.45-.39C823.78 31 906.67 72 985.66 92.83c70.05 18.48 146.53 26.09 214.34 3V0H0v27.35a600.21 600.21 0 00321.39 29.09z" /></svg>');
+      background-size: 1200px 100%;
+      animation: wave-animation-2 12s linear infinite;
+      opacity: 0.4;
     }
 
-    .faculty-content {
-      padding: 20px;
-      flex-grow: 1;
+    @keyframes wave-animation-2 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Wave Style 3 - Ocean Swells */
+    .wave-style-3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .swell-1 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" fill="%231e5799"><path d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z" opacity=".25" /></svg>');
+      background-size: 1200px 120%;
+      animation: wave-animation-3 20s linear infinite;
+      opacity: 0.8;
+    }
+
+    .swell-2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" fill="%232ce0bf"><path d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z" opacity=".5" /></svg>');
+      background-size: 1200px 115%;
+      animation: wave-animation-3 16s linear infinite;
+      opacity: 0.6;
+    }
+
+    .swell-3 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" fill="%23ffffff"><path d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z" /></svg>');
+      background-size: 1200px 110%;
+      animation: wave-animation-3 12s linear infinite;
+      opacity: 0.4;
+    }
+
+    @keyframes wave-animation-3 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Style Selector */
+    .style-selector {
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .style-selector h3 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .style-buttons {
       display: flex;
       flex-direction: column;
+      gap: 8px;
     }
 
-    .faculty-expertise {
-      margin-bottom: 1rem;
-      color: #555;
-      line-height: 1.5;
-      flex-grow: 1;
-    }
-
-    .faculty-exp {
-      display: flex;
-      gap: 0.8rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .exp-badge {
-      background: var(--accent);
-      color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-    }
-
-    .faculty-social {
-      display: flex;
-      gap: 0.8rem;
-      justify-content: center;
-    }
-
-    .social-icon {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
+    .style-btn {
+      padding: 8px 12px;
       background: var(--light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border: 1px solid var(--primary);
+      border-radius: 5px;
+      cursor: pointer;
       transition: all 0.3s;
-      color: var(--primary);
-      text-decoration: none;
     }
 
-    .social-icon:hover {
-      background: var(--accent);
+    .style-btn:hover {
+      background: var(--primary);
       color: white;
-      transform: translateY(-3px);
     }
 
-    .scroll-indicator {
-      text-align: center;
-      margin-top: 20px;
-      color: var(--primary);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .scroll-indicator i {
-      color: var(--accent);
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateX(0);
-      }
-      40% {
-        transform: translateX(10px);
-      }
-      60% {
-        transform: translateX(5px);
-      }
-    }
-
-    /* Contact Section */
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: left;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .contact-icon {
-      font-size: 1.5rem;
-      color: var(--accent);
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .form-group label {
-      font-weight: 500;
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      padding: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    .form-group textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--dark);
+    .style-btn.active {
+      background: var(--primary);
       color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .footer-social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    .footer-social-icon {
-      font-size: 1.5rem;
-      color: white;
-      transition: color 0.3s;
-    }
-
-    .footer-social-icon:hover {
-      color: var(--accent);
-    }
-
-    /* Thank you message */
-    .thank-you {
-      display: none;
-      background: #4CAF50;
-      color: white;
-      padding: 1rem;
-      border-radius: 5px;
-      margin-top: 1rem;
-      text-align: center;
     }
 
     /* Responsive Design */
@@ -605,28 +363,17 @@ I've created a complete website with the requested changes:
         font-size: 1.2rem;
       }
 
-      .programs-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr;
-      }
-
-      .wave-container {
-        height: 150px;
+      .style-selector {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
       }
       
-      .faculty-card {
-        flex: 0 0 280px;
-      }
-      
-      .section-title h2 {
-        font-size: 2rem;
-      }
-      
-      .faculty-name {
-        font-size: 1.3rem;
+      .style-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
 
@@ -643,19 +390,501 @@ I've created a complete website with the requested changes:
         padding: 12px 30px;
         font-size: 1rem;
       }
-      
-      .wave-container {
-        height: 120px;
-      }
-      
-      .faculty-card {
-        flex: 0 0 260px;
-      }
-      
-      .section-title h2 {
-        font-size: 1.8rem;
-      }
     }
+
+     .features {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80') center/cover no-repeat;
+            /*https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80*/
+            min-height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 5rem 2rem;
+            margin-top: 0px;
+        }
+
+        
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #777;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, #f0f0f0, #ffffff);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .success-stories {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+        }
+
+        .stories-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .story-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 2rem;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.4s;
+        }
+
+        .story-card:hover {
+            transform: scale(1);
+        }
+
+        .story-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+            border: 3px solid var(--accent);
+        }
+
+         .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #777;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 1rem auto 0;
+        }
+
+        /* HORIZONTAL FACULTY LAYOUT */
+        .faculty-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+        }
+
+        .faculty-horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding: 30px 20px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) #f1f1f1;
+            -ms-overflow-style: none;
+        }
+
+        .faculty-horizontal-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .faculty-horizontal-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .faculty-horizontal-scroll::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        .faculty-card {
+            flex: 0 0 320px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .faculty-img-container {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .faculty-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .faculty-card:hover .faculty-img {
+            transform: scale(1.05);
+        }
+
+        .faculty-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 20px;
+            color: white;
+        }
+
+        .faculty-name {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .faculty-role {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .faculty-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .faculty-expertise {
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .faculty-exp {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .exp-badge {
+            background: var(--accent);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .faculty-social {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .scroll-indicator {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .scroll-indicator i {
+            color: var(--accent);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(0);
+            }
+            40% {
+                transform: translateX(10px);
+            }
+            60% {
+                transform: translateX(5px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .faculty-card {
+                flex: 0 0 280px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .faculty-name {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .faculty-card {
+                flex: 0 0 260px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+
+        .contact {
+            padding: 5rem 2rem;
+            background-color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-icons {
+            font-size: 1.5rem;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .social-icons:hover {
+            color: var(--accent);
+        }
+
+        /* Thank you message */
+        .thank-you {
+            display: none;
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
   </style>
 </head>
 <body>
@@ -676,365 +905,520 @@ I've created a complete website with the requested changes:
     </nav>
   </header>
 
-  <!-- Hero Section with 3 Waves -->
+  
+  <!-- Style Selector 
+
+  <div class="style-selector"> 
+    <h3>Wave Styles</h3>
+    <div class="style-buttons">
+      <button class="style-btn active" onclick="changeWaveStyle(1)">Smooth Waves</button>
+      <button class="style-btn" onclick="changeWaveStyle(2)">Flowing Curves</button>
+      <button class="style-btn" onclick="changeWaveStyle(3)">Ocean Swells</button>
+    </div>
+  </div>
+-->
+
+
+  <!-- Hero Section with Wave Style 1 (Default) -->
   <section class="hero" id="home">
     <h1>Mission Success</h1>
-    <p>100% Job Guarantee for Any Graduation Students</p>
+    <h2>100% <span>Job Guarantee</span> for Any Graduation Students</h2>
     <a href="#contact" class="cta-button">Enroll Now</a>
     
-    <div class="wave-container">
-      <div class="wave wave1">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
-          <path d="M-1.41,22.22 C150.00,150.00 349.02,-49.98 502.54,94.42 L500.00,0.00 L0.00,0.00 Z" 
-                style="stroke: none; fill: #1e5799;"></path>
-        </svg>
-      </div>
-      <div class="wave wave2">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
-          <path d="M-1.41,69.19 C150.00,150.00 349.02,-49.98 502.54,94.42 L500.00,0.00 L0.00,0.00 Z" 
-                style="stroke: none; fill: #2ce0bf;"></path>
-        </svg>
-      </div>
-      <div class="wave wave3">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
-          <path d="M-1.41,42.22 C150.00,150.00 271.49,-49.98 502.54,74.42 L500.00,0.00 L0.00,0.00 Z" 
-                style="stroke: none; fill: #ffffff;"></path>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <!-- Programs Section with Background Image -->
-  <section class="section section-bg" id="programs">
-    <div class="section-title">
-      <h2>Our Program Courses</h2>
-      <p>We offer specialized training programs designed to make you job-ready</p>
-    </div>
-    <div class="programs-grid">
-      <div class="program-card">
-        <div class="program-icon">
-          <i class="fa-solid fa-computer"></i>
-        </div>
-        <h3>Basic computer knowledge</h3>
-        <p>Understanding hardware components</p> 
-        <p>Software operating systems, applications</p>
-        <p>Fundamental computer operations</p>
-        <p>Internet, sending emails, managing files</p>
-        <p>Using productivity software like Word and Excel</p>
-      </div>
-
-      <div class="program-card">
-        <div class="program-icon">
-          <i class="fa-brands fa-java"></i>
-        </div>
-        <h3>Full Stack Java</h3>
-        <p>Master Java back-end and front-end technologies to become a versatile developer</p>
-        <p>Master the Basics</p>
-        <p>Learn Front-End Development</p>
-        <p>Dive into Back-End Development</p>
-        <p>Database Management</p>
-        <p>Web Services and APIs</p>
-      </div>
-      
-      <div class="program-card">
-        <div class="program-icon">
-          <i class="fa-brands fa-python"></i>
-        </div>
-        <h3>Full Stack Python</h3>
-        <p>Python projects and further develop to expertise in a leading company</p>
-        <p>Front-End Technologies</p>
-        <p>Back-End Technologies</p>
-        <p>Database</p>
-        <p>Development Tools</p>
-      </div>
-      
-      <div class="program-card">
-        <div class="program-icon">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <h3>Data Science & Analytics</h3>
-        <p>Learn to derive insights from data and build a career in analytics</p>
-        <p>Data-Driven Decision-Making</p>
-        <p>Multi-Step Process</p>
-        <p>Advanced Techniques</p>
-        <p>Broad Applications Management</p>
-      </div>
-      
-      <div class="program-card">
-        <div class="program-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <h3>Cybersecurity</h3>
-        <p>Become an expert in protecting digital assets and infrastructure</p>
-        <p>Strong Passwords & Multi-Factor Authentication (MFA)</p>
-        <p>Regular Software Updates</p>
-        <p>Data Backup</p>
-        <p>Phishing Awareness</p>
-      </div>
-      
-      <div class="program-card">
-        <div class="program-icon">
-          <i class="fas fa-calculator"></i>
-        </div>
-        <h3>NON IT</h3>
-        <p>Basic Accounting Knowledge</p>
-        <p>Accounts Receivables</p>
-        <p>Accounts Payable</p>
-        <p>General Ledger</p>
-        <p>Auditing</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Success Stories with Background Image -->
-  <section class="section section-bg" id="success">
-    <div class="section-title">
-      <h2>Success Stories</h2>
-      <p>Our students have achieved great success in their careers</p>
-    </div>
-    <div class="stories-container">
-      <div class="story-card">
-        <img src="https://media.licdn.com/dms/image/v2/D4E03AQHTKESujzcmAw/profile-displayphoto-shrink_800_800/B4EZbAEnZNHoAk-/0/1746979158765?e=1758758400&v=beta&t=t177of_xdC6WLujXspgNgxr2es48lcL-WP05xPkLq80" alt="Student" class="story-img">
-        <h3>Lokesh</h3>
-        <p>Placed at: Taj Hotel</p>
-        <p>Package: 6 LPA</p>
-      </div>
-
-      <div class="story-card">
-        <img src="https://media.licdn.com/dms/image/v2/D5603AQF-AuHDbpstVA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1701266608834?e=1758758400&v=beta&t=X4VaGpAInDD2DBFoMgbCfna0iWVjYvh1qeMLCQ3QPlY" alt="Student" class="story-img">
-        <h3>Priya</h3>
-        <p>Placed at: Marketing Expert</p>
-        <p>Package: 6 LPA</p>
-      </div>
-
-      <div class="story-card">
-        <img src="https://media.licdn.com/dms/image/v2/D5603AQGuEuO9NFJA-Q/profile-displayphoto-crop_800_800/B56ZhKybCBG0AM-/0/1753601390181?e=1758758400&v=beta&t=OOAQhg3rqBQrx41FrEqOGX3xsw4nxSomyAmCQhKyDoE" alt="Student" class="story-img">
-        <h3>Sudha</h3>
-        <p>Placed at: Stuti Technologies Private Limited</p>
-        <p>Package: 3 LPA</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Faculty Trainers Section with Horizontal Layout -->
-  <section class="faculty-section" id="faculty">
-    <div class="container">
-      <div class="section-title">
-        <h2>Our Expert Faculty Trainers</h2>
-        <p>Learn from industry experts with years of experience</p>
-      </div>
-      
-      <div class="faculty-horizontal-scroll">
-        <!-- Faculty 1 -->
-        <div class="faculty-card">
-          <div class="faculty-img-container">
-            <img src="https://media.licdn.com/dms/image/v2/D5603AQEqlS0kxuwEng/profile-displayphoto-crop_800_800/B56Zfi90UuH8AQ-/0/1751859546118?e=1758758400&v=beta&t=GEPVuGkhCqMoodV-hOp267BLK6dH7T2Q5xwM8lhro7E" alt="Faculty" class="faculty-img">
-            <div class="faculty-overlay">
-              <h3 class="faculty-name">Hanumanth</h3>
-              <p class="faculty-role">Senior Finance Trainer</p>
-            </div>
-          </div>
-          <div class="faculty-content">
-            <p class="faculty-expertise">Specializes in Financial Analysis, with extensive MNC industrial experience.</p>
-            <div class="faculty-exp">
-              <span class="exp-badge">12+ Years Exp</span>
-              <span class="exp-badge">B Com, MBA Finance</span>
-            </div>
-            <div class="faculty-social">
-              <a href="https://www.linkedin.com/in/kalapati-hanumanth-kumar-7b0824173/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-        </div>
+    
+    <!-- Wave Style 1 - Smooth Continuous Waves -->
+    <div class="wave-style-1" id="wave-style-1">
+      <div class="wave-1"></div>
+      <div class="wave-2"></div>
+      <div class="wave-3"></div>
+        <p> </p>
+        <p> </p>
+        <p> </p>
+        <p>Transform your career with our proven training programs and secure your future with our job guarantee promise</p>
         
-        <!-- Faculty 2 -->
-        <div class="faculty-card">
-          <div class="faculty-img-container">
-            <img src="https://media.licdn.com/dms/image/v2/D5603AQHSs5OXfkUfyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718262184423?e=1758758400&v=beta&t=u2IxaPYUvxM4Yt8lDoXx7nTZANSWSxftb4aDR1CUl9M" alt="Faculty" class="faculty-img">
-            <div class="faculty-overlay">
-              <h3 class="faculty-name">Charan</h3>
-              <p class="faculty-role">Software Engineer</p>
-            </div>
-          </div>
-          <div class="faculty-content">
-            <p class="faculty-expertise">Expert in Java J2EE | SQL/PLSQL | Oracle E-Business Suite Applications</p>
-            <div class="faculty-exp">
-              <span class="exp-badge">6+ Years Exp</span>
-              <span class="exp-badge">B.tech, CSE</span>
-            </div>
-            <div class="faculty-social">
-              <a href="https://www.linkedin.com/in/pamula-charan-5896b81a1/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-        </div>
+    </div>
+    
+    <!-- Wave Style 2 - Flowing Curves -->
+    <div class="wave-style-2" id="wave-style-2" style="display: none;">
+      <div class="curve-1"></div>
+      <div class="curve-2"></div>
+      <div class="curve-3"></div>
+        <p> </p>
+        <p> </p>
+        <p> </p>
+        <p>Transform your career with our proven training programs and secure your future with our job guarantee promise</p>
         
-        <!-- Faculty 3 -->
-        <div class="faculty-card">
-          <div class="faculty-img-container">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Faculty" class="faculty-img">
-            <div class="faculty-overlay">
-              <h3 class="faculty-name">Sarah Johnson</h3>
-              <p class="faculty-role">Data Science Expert</p>
-            </div>
-          </div>
-          <div class="faculty-content">
-            <p class="faculty-expertise">Specializes in Machine Learning and AI applications for business solutions.</p>
-            <div class="faculty-exp">
-              <span class="exp-badge">8+ Years Exp</span>
-              <span class="exp-badge">PhD in Data Science</span>
-            </div>
-            <div class="faculty-social">
-              <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="scroll-indicator">
-        <i class="fas fa-arrow-right"></i>
-        <span>Scroll horizontally to view more faculty members</span>
-      </div>
+    </div>
+    
+    <!-- Wave Style 3 - Ocean Swells -->
+    <div class="wave-style-3" id="wave-style-3" style="display: none;">
+      <div class="swell-1"></div>
+      <div class="swell-2"></div>
+      <div class="swell-3"></div>
+      <p> </p>
+      <p> </p>
+      <p> </p>
+      <p>Transform your career with our proven training programs and secure your future with our job guarantee promise</p>
+        
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="section section-white" id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us to start your journey to success</p>
-      </div>
-      <div class="contact-container">
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-phone"></i>
+   <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Program Cources</h2>
+                <p>We offer specialized training programs designed to make you job-ready</p>
             </div>
-            <div>
-              <h3>Phone</h3>
-              <p>+91 9032967288</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div>
-              <h3>Email</h3>
-              <p>missionsuccessforever@gmail.com</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-globe"></i>
-            </div>
-            <div>
-              <h3>Website</h3>
-              <p>https://missionsuccess.github.io/home</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div>
-              <h3>Location</h3>
-              <p>Hyderabad, India</p>
-            </div>
-          </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-computer"></i>
+                    </div>
+                    <h3>Basic computer knowledge</h3>
+                    <p>Understanding hardware components</p> 
+                    <p>software operating systems, applications</p>
+                    <p>fundamental computer operations</p>
+                    <p>internet, sending emails, managing files.</p>
+                    <p>using productivity software like word and excelsheets.</p>
+                </div>
 
-          <div class="contact-item">
-            <a href="https://forms.gle/uTd5FKgPp9kjiqx6A" target="_blank" class="contact-item">
-              <div class="contact-icon">
-                <i class="fab fa-google"></i>
-              </div>
-              <div>
-                <h3>Google Form</h3>
-              </div>
-            </a>
-          </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-brands fa-java"></i>
+                    </div>
+                    <h3>Full Stack Java</h3>
+                    <p>Master Java back-end and front-end technologies to become a versatile developer</p>
+                    <p>Master the Basics</p>
+                    <p>Learn Front-End Development</p>
+                    <p>Dive into Back-End Development</p>
+                    <p>Database Management</p>
+                    <p>Web Services and APIs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h3>Full Stack Python</h3>
+                    <p>Python projects and further develop to expertise in a leading company</p>
+                    <p>Front-End Technologies</p>
+                    <p>Back-End Technologies</p>
+                    <p>Database</p>
+                    <p>Development Tools</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Science & Analytics</h3>
+                    <p>Learn to derive insights from data and build a career in analytics</p>
+                    <p>Data-Driven Decision-Making</p>
+                    <p>Multi-Step Process</p>
+                    <p>Advanced Techniques</p>
+                    <p>Broad Applications Management</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Become an expert in protecting digital assets and infrastructure</p>
+                    <p>Strong Passwords & Multi-Factor Authentication (MFA)</p>
+                    <p>Regular Software Updates</p>
+                    <p>Data Backup</p>
+                    <p>Phishing Awareness</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>NON IT</h3>
+                    <!-- <p>Success is the sum of small efforts, repeated day-in and day-out</p> -->
+                    <p>Basic Accounting Knowledge</p>
+                    <p>Accounts Receivables</p>
+                    <p>Accounts Payable</p>
+                    <p>General Ledger</p>
+                    <p>Auditing</p>
+                </div>
+            </div>
         </div>
-        
-        <!-- Updated Form with FormSubmit -->
-        <form class="contact-form" action="https://formsubmit.co/missionsuccessforever@gmail.com" method="POST">
-          <!-- FormSubmit Configuration -->
-          <input type="hidden" name="_subject" value="New Enrollment Request from Website">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://missionsuccess.github.io/home">
-          <input type="hidden" name="_captcha" value="false">
-          
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-            <label for="qualification">Qualification</label>
-            <input type="text" id="qualification" name="qualification" placeholder="Your Qualification" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
-          </div>
-          <div class="form-group">
-            <label for="course">Course Interested In</label>
-            <select id="course" name="course" required>
-              <option value="">Select a course</option>
-              <option value="IT JOB">IT JOB</option>
-              <option value="NON IT">NON IT JOB</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your Message"></textarea>
-          </div>
-          <button type="submit" class="cta-button">Submit</button>
-          
-          <div class="thank-you" id="thankYouMessage">
-            Thank you for your submission! We will contact you shortly.
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="logo">
-        <h1>Mission <span>Success</span></h1>
-      </div>
-      <p>100% Job Guarantee for Any Graduation Students</p>
-      <div class="footer-social-icons">
-        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-      <p>&copy; 2023 Mission Success. All rights reserved.</p>
+    <!-- Success Stories -->
+    <section class="success-stories" id="success">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>Our students have achieved great success in their careers</p>
+            </div>
+            <div class="faculty-horizontal-scroll">
+
+                <div class="story-card">
+                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQHTKESujzcmAw/profile-displayphoto-shrink_800_800/B4EZbAEnZNHoAk-/0/1746979158765?e=1758758400&v=beta&t=t177of_xdC6WLujXspgNgxr2es48lcL-WP05xPkLq80" alt="Student" class="story-img">
+                    <h3>Lokesh</h3>
+                    <p>Placed at: Taj Hotel</p>
+                    <p>Package: 6 LPA</p>
+                </div>
+
+                <div class="story-card">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQF-AuHDbpstVA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1701266608834?e=1758758400&v=beta&t=X4VaGpAInDD2DBFoMgbCfna0iWVjYvh1qeMLCQ3QPlY" alt="Student" class="story-img">
+                    <h3>Priya</h3>
+                    <p>Placed at: Marketing Expert</p>
+                    <p>Package: 6 LPA</p>
+                </div>
+
+                <div class="story-card">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQGuEuO9NFJA-Q/profile-displayphoto-crop_800_800/B56ZhKybCBG0AM-/0/1753601390181?e=1758758400&v=beta&t=OOAQhg3rqBQrx41FrEqOGX3xsw4nxSomyAmCQhKyDoE" alt="Student" class="story-img">
+                    <h3>Sudha</h3>
+                    <p>Placed at: Stuti Technologies Private Limited</p>
+                    <p>Package: 3 LPA</p>
+                </div>
+
+                
+
+                <!--
+                <div class="story-card">
+                    <img src="" alt="Student" class="story-img">
+                    <h3></h3>
+                    <p>Placed at: </p>
+                    <p>Package: 6 LPA</p>
+                </div>
+
+                <div class="story-card">
+                    <img src="" alt="Student" class="story-img">
+                    <h3></h3>
+                    <p>Placed at: </p>
+                    <p>Package: 6 LPA</p>
+                </div>
+                -->
+                
+            </div>
+            <!-- horizontal scroll -->
+            <div class="scroll-indicator">
+                <i class="fas fa-arrow-right"></i>
+                <span>Scroll horizontally to view more faculty members</span>
+            </div>
+           
+
+        </div>
+    </section>
+
+    <!-- Faculty Trainers Section with Horizontal Layout -->
+    <section class="faculty-section" id="faculty">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Expert Faculty Trainers</h2>
+                <p>Learn from industry experts with years of experience</p>
+            </div>
+            
+            <div class="faculty-horizontal-scroll">
+                <!-- Faculty 1 -->
+                <div class="faculty-card">
+                    <div class="faculty-img-container">
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQEqlS0kxuwEng/profile-displayphoto-crop_800_800/B56Zfi90UuH8AQ-/0/1751859546118?e=1758758400&v=beta&t=GEPVuGkhCqMoodV-hOp267BLK6dH7T2Q5xwM8lhro7E" alt="Faculty" class="faculty-img">
+                        <div class="faculty-overlay">
+                            <h3 class="faculty-name">Hanumanth</h3>
+                            <p class="faculty-role">Senior Finance Trainer</p>
+                        </div>
+                    </div>
+                    <div class="faculty-content">
+                        <p class="faculty-expertise">Specializes in Financial Analysis, with extensive MNC industrial experience.</p>
+                        <div class="faculty-exp">
+                            <span class="exp-badge">12+ Years Exp</span>
+                            <span class="exp-badge">B Com, MBA Finance</span>
+                        </div>
+                        <div class="faculty-social">
+                            <a href="https://www.linkedin.com/in/kalapati-hanumanth-kumar-7b0824173/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <!-- <a href="hanumanth161188@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Faculty 2 -->
+                <div class="faculty-card">
+                    <div class="faculty-img-container">
+                    <!--https://randomuser.me/api/portraits/men/44.jpg -->
+                    <!-- https://media.licdn.com/dms/image/v2/D5603AQHSs5OXfkUfyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718262184423?e=1758758400&v=beta&t=u2IxaPYUvxM4Yt8lDoXx7nTZANSWSxftb4aDR1CUl9M-->    
+                        <img src="https://media.licdn.com/dms/image/v2/D5603AQHSs5OXfkUfyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718262184423?e=1758758400&v=beta&t=u2IxaPYUvxM4Yt8lDoXx7nTZANSWSxftb4aDR1CUl9M" alt="Faculty" class="faculty-img">
+                        <div class="faculty-overlay">
+                            <h3 class="faculty-name">Charan</h3>
+                            <p class="faculty-role">Software Engineer</p>
+                        </div>
+                    </div>
+                    <div class="faculty-content">
+                        <p class="faculty-expertise">Expert in Java J2EE | SQL/PLSQL | Oracle E-Business Suite Applications</p>
+                        <div class="faculty-exp">
+                            <span class="exp-badge">3+ Years Exp</span>
+                            <span class="exp-badge">B.tech, CSE</span>
+                        </div>
+                        <div class="faculty-social">
+                            <a href="https://www.linkedin.com/in/pamula-charan-5896b81a1/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <!-- <a href="pamulacharan7@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Faculty 3 
+                <div class="faculty-card">
+                    <div class="faculty-img-container">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Faculty" class="faculty-img">
+                        <div class="faculty-overlay">
+                            <h3 class="faculty-name">Arun Patel</h3>
+                            <p class="faculty-role">Banking & Finance Expert</p>
+                        </div>
+                    </div>
+                    <div class="faculty-content">
+                        <p class="faculty-expertise">Specializes in Retail Banking, Wealth Management, and FinTech innovations with real-world experience.</p>
+                        <div class="faculty-exp">
+                            <span class="exp-badge">15+ Years Exp</span>
+                            <span class="exp-badge">MBA, CFP</span>
+                        </div>
+                        <div class="faculty-social">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                -->
+
+                <!-- Faculty 4 
+                <div class="faculty-card">
+                    <div class="faculty-img-container">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Faculty" class="faculty-img">
+                        <div class="faculty-overlay">
+                            <h3 class="faculty-name">Sneha Desai</h3>
+                            <p class="faculty-role">Business Communication Trainer</p>
+                        </div>
+                    </div>
+                    <div class="faculty-content">
+                        <p class="faculty-expertise">Expert in Corporate Communication, Soft Skills development, and Interview Preparation techniques.</p>
+                        <div class="faculty-exp">
+                            <span class="exp-badge">8+ Years Exp</span>
+                            <span class="exp-badge">MA, PhD</span>
+                        </div>
+                        <div class="faculty-social">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                -->
+                
+                <!-- Faculty 5 
+                <div class="faculty-card">
+                    <div class="faculty-img-container">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Faculty" class="faculty-img">
+                        <div class="faculty-overlay">
+                            <h3 class="faculty-name">Vikram Singh</h3>
+                            <p class="faculty-role">Investment Strategist</p>
+                        </div>
+                    </div>
+                    <div class="faculty-content">
+                        <p class="faculty-expertise">Expert in portfolio management, equity research, and investment strategies with a proven track record.</p>
+                        <div class="faculty-exp">
+                            <span class="exp-badge">14+ Years Exp</span>
+                            <span class="exp-badge">CFA, MBA</span>
+                        </div>
+                        <div class="faculty-social">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                -->
+
+
+            </div>
+            
+            <!-- 
+            <div class="scroll-indicator">
+                <i class="fas fa-arrow-right"></i>
+                <span>Scroll horizontally to view more faculty members</span>
+            </div>
+            -->
+
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us to start your journey to success</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 9032967288</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>missionsuccessforever@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h3>Website</h3>
+                            <p>https://missionsuccess.github.io/home</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>India</p>
+                        </div>
+                    </div>
+
+                     <div class="contact-item">
+                        
+                        <!-- Replace YOUR_GOOGLE_FORM_LINK with your actual Google Form URL -->
+                        <a href="https://forms.gle/uTd5FKgPp9kjiqx6A" target="_blank" class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div>
+                                <h3>Google Form</h3>
+                            </div>
+                        </a>
+        
     </div>
-  </footer>
+                </div>
+                
+                <!-- Updated Form with FormSubmit -->
+                <form class="contact-form" action="https://formsubmit.co/missionsuccessforever@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New Enrollment Request from Website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://missionsuccess.github.io/home">
+                    <input type="hidden" name="_captcha" value="false">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="qualification">Qualification</label>
+                        <input type="text" id="qualification" name="qualification" placeholder="Your Qualification" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Course Interested In</label>
+                        <select id="course" name="course" required>
+                            <option value="">Select a course</option>
+                            <option value="IT JOB">IT JOB</option>
+                            <option value="NON IT">NON IT JOB</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Submit</button>
+                    
+                    <div class="thank-you" id="thankYouMessage">
+                        Thank you for your submission! We will contact you shortly.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <h1>Mission <span>Success</span></h1>
+            </div>
+            <p>100% Job Guarantee for Any Graduation Students</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2023 Mission Success. All rights reserved.</p>
+        </div>
+    </footer>
+
 
   <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        window.scrollTo({
-          top: targetElement.offsetTop - 70,
-          behavior: 'smooth'
-        });
+    function changeWaveStyle(styleNum) {
+      // Hide all wave styles
+      document.getElementById('wave-style-1').style.display = 'none';
+      document.getElementById('wave-style-2').style.display = 'none';
+      document.getElementById('wave-style-3').style.display = 'none';
+      
+      // Show selected wave style
+      document.getElementById('wave-style-' + styleNum).style.display = 'block';
+      
+      // Update active button
+      document.querySelectorAll('.style-btn').forEach(btn => {
+        btn.classList.remove('active');
       });
-    });
+      document.querySelectorAll('.style-btn')[styleNum - 1].classList.add('active');
+    }
 
-    // Show thank you message after form submission
-    document.querySelector('.contact-form').addEventListener('submit', function() {
+    // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .story-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Show thank you message after form submission
+        document.querySelector('.contact-form').addEventListener('submit', function() {
             setTimeout(function() {
                 document.getElementById('thankYouMessage').style.display = 'block';
             }, 1000);
@@ -1073,6 +1457,6 @@ I've created a complete website with the requested changes:
             });
         });
     
-    </script>
+  </script>
 </body>
 </html>
