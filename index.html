@@ -1,708 +1,1078 @@
+# Mission Success Website with Requested Updates
+
+I've created a complete website with the requested changes:
+- Added the background image to Programs and Success Stories sections
+- Made the Faculty section horizontal with centered heading
+- Arranged contact section with info on left and form on right
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission Success - 100% Job Guarantee</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Success - 100% Job Guarantee</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        :root {
-            --primary: #2c3e50;
-            --secondary: #e74c3c;
-            --accent: #3498db;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-        }
+    :root {
+      --primary: #1e5799;
+      --secondary: #2ce0bf;
+      --accent: #e74c3c;
+      --light: #f8f9fa;
+      --dark: #2c3e50;
+    }
 
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-            overflow-x: hidden;
-        }
+    body {
+      background: #fff;
+      color: #333;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
 
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 1rem 2rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-        }
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
 
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
+    .logo span {
+      color: var(--accent);
+    }
 
-        .logo span {
-            color: var(--secondary);
-        }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+    nav a {
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
+    nav a:hover {
+      color: var(--accent);
+    }
 
-        nav a:hover {
-            color: var(--secondary);
-        }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent);
+      transition: width 0.3s;
+    }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary);
-            transition: width 0.3s;
-        }
+    nav a:hover::after {
+      width: 100%;
+    }
 
-        nav a:hover::after {
-            width: 100%;
-        }
+    /* Hero Section with 3 Waves */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 150px 20px 180px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      z-index: 1;
+      overflow: hidden;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
 
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('2.png') center/cover no-repeat;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 2rem;
-            margin-top: 70px;
-        }
+    .cta-button {
+      background-color: var(--accent);
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      position: relative;
+    }
 
-        .hero-content {
-            max-width: 800px;
-            animation: fadeIn 1.5s ease-out;
-        }
+    .cta-button:hover {
+      background-color: #c0392b;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
 
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+    /* Wave Section */
+    .wave-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
 
-        .hero h2 span {
-            color: var(--secondary);
-        }
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .wave1 {
+      z-index: 3;
+      opacity: 0.8;
+      animation: wave-animation-1 12s linear infinite;
+    }
 
-        .highlight {
-            color: var(--secondary);
-            font-weight: bold;
-        }
+    .wave2 {
+      z-index: 2;
+      opacity: 0.6;
+      animation: wave-animation-2 10s linear infinite;
+    }
 
-        .contact-info {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-            backdrop-filter: blur(5px);
-            width: 100%;
-            max-width: 500px;
-        }
+    .wave3 {
+      z-index: 1;
+      opacity: 0.4;
+      animation: wave-animation-3 8s linear infinite;
+    }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 10px 0;
-        }
+    .wave svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-        .contact-item i {
-            margin-right: 15px;
-            color: var(--secondary);
-            font-size: 1.5rem;
-        }
+    @keyframes wave-animation-1 {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
 
-        .cta-button {
-            background-color: var(--secondary);
-            color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            animation: pulse 2s infinite;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 1rem;
-        }
+    @keyframes wave-animation-2 {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
 
-        .cta-button:hover {
-            background-color: #c0392b;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
+    @keyframes wave-animation-3 {
+      0% { transform: translateX(0) scaleY(1.2); }
+      50% { transform: translateX(-50%) scaleY(1); }
+      100% { transform: translateX(-100%) scaleY(1.2); }
+    }
 
-        .features {
-            padding: 5rem 2rem;
-            background-color: white;
-        }
+    /* Sections Common Styles */
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .section-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                  url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80') center/cover no-repeat;
+      color: white;
+    }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
+    .section-light {
+      background: var(--light);
+    }
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
+    .section-white {
+      background: white;
+    }
 
-        .section-title p {
-            color: #777;
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+    .section-title {
+      margin-bottom: 3rem;
+    }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
 
-        .feature-card {
-            background: linear-gradient(145deg, #f0f0f0, #ffffff);
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
+    .section-title p {
+      color: #666;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
+    .section-bg .section-title h2,
+    .section-bg .section-title p {
+      color: white;
+    }
 
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
+    /* Programs Section */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
+    .program-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
 
-        .feature-card p {
-            color: #666;
-            line-height: 1.6;
-        }
+    .program-card:hover {
+      transform: translateY(-10px);
+    }
 
-        .success-stories {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-        }
+    .program-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
 
-        .stories-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+    .program-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
 
-        .story-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            padding: 2rem;
-            width: 300px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
+    .program-card p {
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
 
-        .story-card:hover {
-            transform: scale(1.05);
-        }
+    /* Success Stories */
+    .stories-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
 
-        .story-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 1rem;
-            border: 3px solid var(--accent);
-        }
+    .story-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      padding: 2rem;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
 
-        .contact {
-            padding: 5rem 2rem;
-            background-color: white;
-        }
+    .story-card:hover {
+      transform: scale(1.05);
+    }
 
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
+    .story-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      border: 3px solid var(--secondary);
+    }
 
-        .contact-info-full {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
+    /* Faculty Section */
+    .faculty-section {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+    }
 
-        .contact-item-full {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+    .faculty-horizontal-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 25px;
+      padding: 30px 20px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) #f1f1f1;
+    }
 
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--accent);
-        }
+    .faculty-horizontal-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
+    .faculty-horizontal-scroll::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
+    .faculty-horizontal-scroll::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 10px;
+    }
 
-        .form-group label {
-            font-weight: 500;
-        }
+    .faculty-card {
+      flex: 0 0 320px;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .form-group input,
-        .form-group textarea {
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
+    .faculty-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
 
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
+    .faculty-img-container {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
 
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
+    .faculty-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
+    .faculty-card:hover .faculty-img {
+      transform: scale(1.05);
+    }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
+    .faculty-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      padding: 20px;
+      color: white;
+    }
 
-        .social-icon {
-            font-size: 1.5rem;
-            color: white;
-            transition: color 0.3s;
-        }
+    .faculty-name {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
 
-        .social-icon:hover {
-            color: var(--accent);
-        }
+    .faculty-role {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1rem;
+    }
 
-        /* Thank you message */
-        .thank-you {
-            display: none;
-            background: #4CAF50;
-            color: white;
-            padding: 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
-            text-align: center;
-        }
+    .faculty-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .faculty-expertise {
+      margin-bottom: 1rem;
+      color: #555;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
+    .faculty-exp {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
+    .exp-badge {
+      background: var(--accent);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
 
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+    .faculty-social {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+    }
 
-            .hero h2 {
-                font-size: 2.5rem;
-            }
+    .social-icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      color: var(--primary);
+      text-decoration: none;
+    }
 
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .contact-item i {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
+    .social-icon:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+    }
 
-        @media (max-width: 480px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .contact-item {
-                font-size: 0.9rem;
-            }
-            
-            .cta-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
-    </style>
+    .scroll-indicator {
+      text-align: center;
+      margin-top: 20px;
+      color: var(--primary);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .scroll-indicator i {
+      color: var(--accent);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0);
+      }
+      40% {
+        transform: translateX(10px);
+      }
+      60% {
+        transform: translateX(5px);
+      }
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--accent);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .footer-social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .footer-social-icon {
+      font-size: 1.5rem;
+      color: white;
+      transition: color 0.3s;
+    }
+
+    .footer-social-icon:hover {
+      color: var(--accent);
+    }
+
+    /* Thank you message */
+    .thank-you {
+      display: none;
+      background: #4CAF50;
+      color: white;
+      padding: 1rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 10px 5%;
+      }
+
+      nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .programs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+
+      .wave-container {
+        height: 150px;
+      }
+      
+      .faculty-card {
+        flex: 0 0 280px;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .faculty-name {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+      }
+      
+      .wave-container {
+        height: 120px;
+      }
+      
+      .faculty-card {
+        flex: 0 0 260px;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <i class="fas fa-rocket"></i>
-                <h1>Mission <span>Success</span></h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#features">Programs</a></li>
-                    <li><a href="#success">Success Stories</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="logo">
+      <i class="fas fa-rocket"></i>
+      <h1>Mission <span>Success</span></h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#success">Success Stories</a></li>
+        <li><a href="#faculty">Our Faculty</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>MISSION <span class="highlight">SUCCESS</span></h2>
-            <p>100% Job Guarantee Program</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+91 9032967288</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>missionsuccessforever@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-globe"></i>
-                    <span>https://missionsuccess.github.io/home</span>
-                </div>
-            </div>
-            
-            <a href="#contact" class="cta-button">Get Started Today</a>
-        </div>
-    </section>
+  <!-- Hero Section with 3 Waves -->
+  <section class="hero" id="home">
+    <h1>Mission Success</h1>
+    <p>100% Job Guarantee for Any Graduation Students</p>
+    <a href="#contact" class="cta-button">Enroll Now</a>
+    
+    <div class="wave-container">
+      <div class="wave wave1">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+          <path d="M-1.41,22.22 C150.00,150.00 349.02,-49.98 502.54,94.42 L500.00,0.00 L0.00,0.00 Z" 
+                style="stroke: none; fill: #1e5799;"></path>
+        </svg>
+      </div>
+      <div class="wave wave2">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+          <path d="M-1.41,69.19 C150.00,150.00 349.02,-49.98 502.54,94.42 L500.00,0.00 L0.00,0.00 Z" 
+                style="stroke: none; fill: #2ce0bf;"></path>
+        </svg>
+      </div>
+      <div class="wave wave3">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none">
+          <path d="M-1.41,42.22 C150.00,150.00 271.49,-49.98 502.54,74.42 L500.00,0.00 L0.00,0.00 Z" 
+                style="stroke: none; fill: #ffffff;"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Programs</h2>
-                <p>We offer specialized training programs designed to make you job-ready</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Full Stack Development</h3>
-                    <p>Master front-end and back-end technologies to become a versatile developer</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Data Science & Analytics</h3>
-                    <p>Learn to derive insights from data and build a career in analytics</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity</h3>
-                    <p>Become an expert in protecting digital assets and infrastructure</p>
-                </div>
-            </div>
+  <!-- Programs Section with Background Image -->
+  <section class="section section-bg" id="programs">
+    <div class="section-title">
+      <h2>Our Program Courses</h2>
+      <p>We offer specialized training programs designed to make you job-ready</p>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="program-icon">
+          <i class="fa-solid fa-computer"></i>
         </div>
-    </section>
+        <h3>Basic computer knowledge</h3>
+        <p>Understanding hardware components</p> 
+        <p>Software operating systems, applications</p>
+        <p>Fundamental computer operations</p>
+        <p>Internet, sending emails, managing files</p>
+        <p>Using productivity software like Word and Excel</p>
+      </div>
 
-    <!-- Success Stories -->
-    <section class="success-stories" id="success">
-        <div class="container">
-            <div class="section-title">
-                <h2>Success Stories</h2>
-                <p>Our students have achieved great success in their careers</p>
-            </div>
-            <div class="stories-container">
-                <div class="story-card">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" class="story-img">
-                    <h3>Rahul Sharma</h3>
-                    <p>Placed at: Tech Solutions Inc.</p>
-                    <p>Package: 8 LPA</p>
-                </div>
-                <div class="story-card">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" class="story-img">
-                    <h3>Priya Patel</h3>
-                    <p>Placed at: Data Analytics Pro</p>
-                    <p>Package: 7.5 LPA</p>
-                </div>
-                <div class="story-card">
-                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Student" class="story-img">
-                    <h3>Arun Kumar</h3>
-                    <p>Placed at: Secure Systems Ltd.</p>
-                    <p>Package: 9 LPA</p>
-                </div>
-            </div>
+      <div class="program-card">
+        <div class="program-icon">
+          <i class="fa-brands fa-java"></i>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch with us to start your journey to success</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info-full">
-                    <div class="contact-item-full">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+91 9032967288</p>
-                        </div>
-                    </div>
-                    <div class="contact-item-full">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>missionsuccessforever@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item-full">
-                        <div class="contact-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div>
-                            <h3>Website</h3>
-                            <p>https://missionsuccess.github.io/home</p>
-                        </div>
-                    </div>
-                    <div class="contact-item-full">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Hyderabad, India</p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="Your Phone Number" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" placeholder="Your Message"></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">Submit</button>
-                    
-                    <div class="thank-you" id="thankYouMessage">
-                        Thank you for your submission! We will contact you shortly.
-                    </div>
-                </form>
-            </div>
+        <h3>Full Stack Java</h3>
+        <p>Master Java back-end and front-end technologies to become a versatile developer</p>
+        <p>Master the Basics</p>
+        <p>Learn Front-End Development</p>
+        <p>Dive into Back-End Development</p>
+        <p>Database Management</p>
+        <p>Web Services and APIs</p>
+      </div>
+      
+      <div class="program-card">
+        <div class="program-icon">
+          <i class="fa-brands fa-python"></i>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="logo">
-                <i class="fas fa-rocket"></i>
-                <h1>Mission <span>Success</span></h1>
-            </div>
-            <p>100% Job Guarantee for Any Graduation Students</p>
-            <div class="social-icons">
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <p>&copy; 2023 Mission Success. All rights reserved.</p>
+        <h3>Full Stack Python</h3>
+        <p>Python projects and further develop to expertise in a leading company</p>
+        <p>Front-End Technologies</p>
+        <p>Back-End Technologies</p>
+        <p>Database</p>
+        <p>Development Tools</p>
+      </div>
+      
+      <div class="program-card">
+        <div class="program-icon">
+          <i class="fas fa-chart-line"></i>
         </div>
-    </footer>
+        <h3>Data Science & Analytics</h3>
+        <p>Learn to derive insights from data and build a career in analytics</p>
+        <p>Data-Driven Decision-Making</p>
+        <p>Multi-Step Process</p>
+        <p>Advanced Techniques</p>
+        <p>Broad Applications Management</p>
+      </div>
+      
+      <div class="program-card">
+        <div class="program-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Cybersecurity</h3>
+        <p>Become an expert in protecting digital assets and infrastructure</p>
+        <p>Strong Passwords & Multi-Factor Authentication (MFA)</p>
+        <p>Regular Software Updates</p>
+        <p>Data Backup</p>
+        <p>Phishing Awareness</p>
+      </div>
+      
+      <div class="program-card">
+        <div class="program-icon">
+          <i class="fas fa-calculator"></i>
+        </div>
+        <h3>NON IT</h3>
+        <p>Basic Accounting Knowledge</p>
+        <p>Accounts Receivables</p>
+        <p>Accounts Payable</p>
+        <p>General Ledger</p>
+        <p>Auditing</p>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 70,
-                    behavior: 'smooth'
-                });
-            });
+  <!-- Success Stories with Background Image -->
+  <section class="section section-bg" id="success">
+    <div class="section-title">
+      <h2>Success Stories</h2>
+      <p>Our students have achieved great success in their careers</p>
+    </div>
+    <div class="stories-container">
+      <div class="story-card">
+        <img src="https://media.licdn.com/dms/image/v2/D4E03AQHTKESujzcmAw/profile-displayphoto-shrink_800_800/B4EZbAEnZNHoAk-/0/1746979158765?e=1758758400&v=beta&t=t177of_xdC6WLujXspgNgxr2es48lcL-WP05xPkLq80" alt="Student" class="story-img">
+        <h3>Lokesh</h3>
+        <p>Placed at: Taj Hotel</p>
+        <p>Package: 6 LPA</p>
+      </div>
+
+      <div class="story-card">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQF-AuHDbpstVA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1701266608834?e=1758758400&v=beta&t=X4VaGpAInDD2DBFoMgbCfna0iWVjYvh1qeMLCQ3QPlY" alt="Student" class="story-img">
+        <h3>Priya</h3>
+        <p>Placed at: Marketing Expert</p>
+        <p>Package: 6 LPA</p>
+      </div>
+
+      <div class="story-card">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQGuEuO9NFJA-Q/profile-displayphoto-crop_800_800/B56ZhKybCBG0AM-/0/1753601390181?e=1758758400&v=beta&t=OOAQhg3rqBQrx41FrEqOGX3xsw4nxSomyAmCQhKyDoE" alt="Student" class="story-img">
+        <h3>Sudha</h3>
+        <p>Placed at: Stuti Technologies Private Limited</p>
+        <p>Package: 3 LPA</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty Trainers Section with Horizontal Layout -->
+  <section class="faculty-section" id="faculty">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Expert Faculty Trainers</h2>
+        <p>Learn from industry experts with years of experience</p>
+      </div>
+      
+      <div class="faculty-horizontal-scroll">
+        <!-- Faculty 1 -->
+        <div class="faculty-card">
+          <div class="faculty-img-container">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEqlS0kxuwEng/profile-displayphoto-crop_800_800/B56Zfi90UuH8AQ-/0/1751859546118?e=1758758400&v=beta&t=GEPVuGkhCqMoodV-hOp267BLK6dH7T2Q5xwM8lhro7E" alt="Faculty" class="faculty-img">
+            <div class="faculty-overlay">
+              <h3 class="faculty-name">Hanumanth</h3>
+              <p class="faculty-role">Senior Finance Trainer</p>
+            </div>
+          </div>
+          <div class="faculty-content">
+            <p class="faculty-expertise">Specializes in Financial Analysis, with extensive MNC industrial experience.</p>
+            <div class="faculty-exp">
+              <span class="exp-badge">12+ Years Exp</span>
+              <span class="exp-badge">B Com, MBA Finance</span>
+            </div>
+            <div class="faculty-social">
+              <a href="https://www.linkedin.com/in/kalapati-hanumanth-kumar-7b0824173/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Faculty 2 -->
+        <div class="faculty-card">
+          <div class="faculty-img-container">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQHSs5OXfkUfyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718262184423?e=1758758400&v=beta&t=u2IxaPYUvxM4Yt8lDoXx7nTZANSWSxftb4aDR1CUl9M" alt="Faculty" class="faculty-img">
+            <div class="faculty-overlay">
+              <h3 class="faculty-name">Charan</h3>
+              <p class="faculty-role">Software Engineer</p>
+            </div>
+          </div>
+          <div class="faculty-content">
+            <p class="faculty-expertise">Expert in Java J2EE | SQL/PLSQL | Oracle E-Business Suite Applications</p>
+            <div class="faculty-exp">
+              <span class="exp-badge">6+ Years Exp</span>
+              <span class="exp-badge">B.tech, CSE</span>
+            </div>
+            <div class="faculty-social">
+              <a href="https://www.linkedin.com/in/pamula-charan-5896b81a1/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Faculty 3 -->
+        <div class="faculty-card">
+          <div class="faculty-img-container">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Faculty" class="faculty-img">
+            <div class="faculty-overlay">
+              <h3 class="faculty-name">Sarah Johnson</h3>
+              <p class="faculty-role">Data Science Expert</p>
+            </div>
+          </div>
+          <div class="faculty-content">
+            <p class="faculty-expertise">Specializes in Machine Learning and AI applications for business solutions.</p>
+            <div class="faculty-exp">
+              <span class="exp-badge">8+ Years Exp</span>
+              <span class="exp-badge">PhD in Data Science</span>
+            </div>
+            <div class="faculty-social">
+              <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator">
+        <i class="fas fa-arrow-right"></i>
+        <span>Scroll horizontally to view more faculty members</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section section-white" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us to start your journey to success</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h3>Phone</h3>
+              <p>+91 9032967288</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h3>Email</h3>
+              <p>missionsuccessforever@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div>
+              <h3>Website</h3>
+              <p>https://missionsuccess.github.io/home</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h3>Location</h3>
+              <p>Hyderabad, India</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <a href="https://forms.gle/uTd5FKgPp9kjiqx6A" target="_blank" class="contact-item">
+              <div class="contact-icon">
+                <i class="fab fa-google"></i>
+              </div>
+              <div>
+                <h3>Google Form</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Updated Form with FormSubmit -->
+        <form class="contact-form" action="https://formsubmit.co/missionsuccessforever@gmail.com" method="POST">
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="New Enrollment Request from Website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://missionsuccess.github.io/home">
+          <input type="hidden" name="_captcha" value="false">
+          
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label for="qualification">Qualification</label>
+            <input type="text" id="qualification" name="qualification" placeholder="Your Qualification" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+          </div>
+          <div class="form-group">
+            <label for="course">Course Interested In</label>
+            <select id="course" name="course" required>
+              <option value="">Select a course</option>
+              <option value="IT JOB">IT JOB</option>
+              <option value="NON IT">NON IT JOB</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your Message"></textarea>
+          </div>
+          <button type="submit" class="cta-button">Submit</button>
+          
+          <div class="thank-you" id="thankYouMessage">
+            Thank you for your submission! We will contact you shortly.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="logo">
+        <h1>Mission <span>Success</span></h1>
+      </div>
+      <p>100% Job Guarantee for Any Graduation Students</p>
+      <div class="footer-social-icons">
+        <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="footer-social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p>&copy; 2023 Mission Success. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        window.scrollTo({
+          top: targetElement.offsetTop - 70,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Show thank you message after form submission
+    document.querySelector('.contact-form').addEventListener('submit', function() {
+            setTimeout(function() {
+                document.getElementById('thankYouMessage').style.display = 'block';
+            }, 1000);
         });
 
-        // Animation on scroll
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
+            // Animation for faculty cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const facultyCards = document.querySelectorAll('.faculty-card');
+            
+            // Set initial state
+            facultyCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(40px)';
+            });
+            
+            // Animate with delay
+            facultyCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+            
+            // Hide scroll indicator after scrolling
+            const scrollContainer = document.querySelector('.faculty-horizontal-scroll');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            
+            scrollContainer.addEventListener('scroll', function() {
+                if (scrollContainer.scrollLeft > 50) {
+                    scrollIndicator.style.opacity = '0';
+                    scrollIndicator.style.transition = 'opacity 0.5s ease';
+                } else {
+                    scrollIndicator.style.opacity = '1';
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .story-card').forEach(el => {
-            observer.observe(el);
         });
-
-        // Show thank you message after form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            document.getElementById('thankYouMessage').style.display = 'block';
-            
-            // Reset form
-            this.reset();
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                document.getElementById('thankYouMessage').style.display = 'none';
-            }, 5000);
-        });
+    
     </script>
 </body>
 </html>
