@@ -95,7 +95,7 @@
       text-align: center;
       padding: 150px 20px 180px;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
+      color:  rgb(68, 4, 141);
       z-index: 1;
       overflow: hidden;
     }
@@ -103,7 +103,7 @@
     .hero h2 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: rgb(209, 6, 91);
+            color: rgb(68, 4, 141);
             animation: fadeInDown 1s ease;
         }
 
@@ -112,7 +112,7 @@
         }
     
     .hero h1 {
-      font-size: 2.0rem;
+      font-size: 2frem;
       margin-bottom: 15px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
@@ -121,6 +121,10 @@
       font-size: 1.5rem;
       max-width: 600px;
       margin: 0 auto 30px;
+    }
+
+    .hero span {
+      color: var(--accent);
     }
 
     .cta-button {
@@ -884,6 +888,96 @@
             .hero p {
                 font-size: 1.2rem;
             }
+
+            .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin: 0 auto;
+        }
+        
+        .feature-icon {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 2.5rem;
+            color: #3498db;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .service-list {
+            list-style: none;
+            counter-reset: service-counter;
+        }
+        
+        .service-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed #e0e0e0;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-list li::before {
+            counter-increment: service-counter;
+            content: counter(service-counter) ".";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #3498db;
+            width: 30px;
+        }
+        
+        /* Simple hover effect */
+        .service-list li:hover {
+            background-color: #f5f9ff;
+            padding-left: 45px;
+            transition: all 0.2s ease;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
         }
   </style>
 </head>
@@ -898,6 +992,7 @@
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#features">Programs</a></li>
+        <li><a href="#service">Our Services</a></li>
         <li><a href="#success">Success Stories</a></li>
         <li><a href="#faculty">Our Faculty</a></li>
         <li><a href="#contact">Contact Us</a></li>
@@ -921,8 +1016,9 @@
 
   <!-- Hero Section with Wave Style 1 (Default) -->
   <section class="hero" id="home">
-    <h1>Mission Success</h1>
-    <h2>100% <span>Job Guarantee</span> for Any Graduation Students</h2>
+    <h1>Mission <span>Success</span></h1>
+    <h2>100% Job Guarantee for Any Graduation Students</h2>
+    <!--<h2>100% <span>Job Guarantee</span> for Any Graduation Students</h2> -->
     <a href="#contact" class="cta-button">Enroll Now</a>
     <p> </p>
     <p> </p>
@@ -1048,6 +1144,39 @@
                     <p>Accounts Payable</p>
                     <p>General Ledger</p>
                     <p>Auditing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="service" id="service">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Service</h2>
+                <p>We offer specialized training programs designed to make you job-ready</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-hand-holding-hand"></i>
+                    </div>
+                    <h3>Our Service Features</h3>
+                    <ul class="service-list">
+                        <!-- Ordered by character count (ascending) -->
+                        <p>100% Placement.</p>
+                        <p>Provide Job reference.</p>
+                        <p>Teach with live scenarios.</p>
+                        <p>Resume preparation with Portfolio.</p>
+                        <p>Providing interview information.</p>
+                        <p>Conduct 3 hours off line classes on Sundays.</p>
+                        <p>Conduct semi-interviews before going interviews.</p>
+                        <p>From resume preparation to getting JOB we are with you.</p>
+                        <p>Daily exams in online, after exam 1hr exam paper discuss in Zoom.</p>
+                        <p>Material will be providing (Accounts, Reasoning, Numerical, Computer basics, Communication).</p>
+                        <p>Fee 10 K for NON IT, 30 K for IT students (20% in advance, remaining will pay after you get JOB).</p>
+                        
+                    </ul>
                 </div>
             </div>
         </div>
